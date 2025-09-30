@@ -4,22 +4,33 @@
         {
             "label": "build fasm",
             "type": "shell",
-            "command": "fasm ${fileBasename} && chmod -x ${fileBasenameNoExtension}",
+            "command": "fasm ${fileBasename} && chmod +x ${fileBasenameNoExtension} && ./${fileBasenameNoExtension}",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": [],
-            "detail": "Compiles the active FASM file."
+            "detail": "Compiles the active FASM file.",
+            
         },
         {
-            "label": "run fasm",
+            "label": "run-fasm",
             "type": "shell",
             "command": "./${fileBasenameNoExtension}",
             "group": "test",
-            "dependsOn": ["build fasm"],
+            "dependsOn": [
+                "build fasm"
+            ],
             "problemMatcher": [],
-            "detail": "Runs the compiled FASM executable."
-        },
+            "detail": "Runs the compiled FASM executable.",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        }
     ]
 }
