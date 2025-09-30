@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build fasm",
+            "type": "shell",
+            "command": "fasm ${fileBasename} && chmod -x ${fileBasenameNoExtension}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Compiles the active FASM file."
+        },
+        {
+            "label": "run fasm",
+            "type": "shell",
+            "command": "./${fileBasenameNoExtension}",
+            "group": "test",
+            "dependsOn": ["build fasm"],
+            "problemMatcher": [],
+            "detail": "Runs the compiled FASM executable."
+        },
+    ]
+}
