@@ -11,6 +11,12 @@ start:
   mov  edx,len
   int  0x80
 
+  mov eax,4
+  mov ebx,1
+  mov ecx,msg2
+  mov edx,len2
+  int 0x80
+
   mov  eax,1
   xor  ebx,ebx
   int  0x80
@@ -18,4 +24,7 @@ start:
 segment readable writeable
 
 msg db "Hello, World!",0x0a
-len = $ - msg
+len = $-msg
+
+msg2 db "beans",0x0a
+len2 = $-msg2
