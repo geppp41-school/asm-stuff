@@ -2,12 +2,15 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
   },
-  "postCreateCommand": "sudo apt update && sudo apt install fasm",
+  "postCreateCommand": "sudo apt update && sudo apt install nasm",
   "customizations": {
     "vscode": {
       "extensions": [
         "13x.assembly",
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools",
+        "maziac.asm-code-lens",
+        "formulahendry.code-runner",
+        "usernamehw.errorlens"
       ]
     }
   }
