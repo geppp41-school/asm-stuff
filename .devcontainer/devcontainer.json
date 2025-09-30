@@ -1,0 +1,14 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+  },
+  "postCreateCommand": "sudo apt update && sudo apt install fasm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "13x.assembly",
+        "ms-vscode.cpptools"
+      ]
+    }
+  }
+}
